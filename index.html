@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width,
+               initial-scale=1.0,
+               maximum-scale=1.0,
+               user-scalable=no">
+
+<title>Happy Anniversary</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* ==========================================================
+   GLOBAL SETTINGS
+   ========================================================== */
+
+html,
+body
+{
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: radial-gradient(circle at top, #5b0a18, #120006);
+
+    font-family: 'Poppins', sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+
+/* ==========================================================
+   FLOATING HEARTS
+   ========================================================== */
+
+.heart
+{
+    position: fixed;
+
+    bottom: -20px;
+
+    color: #ff4d6d;
+
+    animation: float 8s linear infinite;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+@keyframes float
+{
+    from
+    {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to
+    {
+        transform: translateY(-120vh);
+        opacity: 0;
+    }
+}
+
+
+
+/* ==========================================================
+   SOFT GLOW FOR INTRO
+   ========================================================== */
+
+.glow
+{
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    background: #ff4d6d;
+
+    filter: blur(120px);
+
+    opacity: 0.25;
+
+    border-radius: 50%;
+
+    top: 20%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 0;
+}
+
+
+
+/* ==========================================================
+   PAGE CONTAINER
+   ========================================================== */
+
+.page
+{
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    color: white;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+
+/* ==========================================================
+   BUTTON STYLE
+   ========================================================== */
+
+.btn
+{
+    margin-top: 30px;
+
+    padding: 15px 40px;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    background: #ff3b6b;
+
+    border: none;
+    border-radius: 40px;
+
+    color: white;
+
+    box-shadow: 0 0 25px #ff3b6b;
+
+    transition: transform 0.2s ease;
+}
+
+.btn:active
+{
+    transform: scale(0.95);
+}
+
+
+
+/* ==========================================================
+   TEXT STYLES
+   ========================================================== */
+
+h1
+{
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    letter-spacing: 1px;
+}
+
+p
+{
+    font-size: 20px;
+    max-width: 90%;
+}
+
+
+
+/* ==========================================================
+   DATE STYLE
+   ========================================================== */
+
+.date
+{
+    font-size: 64px;
+    font-weight: bold;
+
+    color: #ff9db4;
+
+    font-family: 'Playfair Display', serif;
+}
+
+
+
+/* ==========================================================
+   PHOTO GRID
+   ========================================================== */
+
+.grid
+{
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+
+    margin-top: 20px;
+}
+
+.grid img
+{
+    width: 160px;
+    height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+
+    border: 3px solid white;
+
+    background: #222;
+}
+
+
+
+/* ==========================================================
+   VIDEO PLAYER
+   ========================================================== */
+
+.player
+{
+    width: 90%;
+    max-width: 500px;
+
+    background: #111;
+
+    border-radius: 15px;
+
+    padding: 10px;
+}
+
+.controls
+{
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 10px;
+}
+
+.controls button
+{
+    background: #ff3b6b;
+
+    border: none;
+
+    color: white;
+
+    padding: 10px 15px;
+
+    border-radius: 10px;
+
+    font-size: 18px;
+}
+
+#seek
+{
+    width: 100%;
+}
+
+
+
+/* ==========================================================
+   HIDE PAGES INITIALLY
+   ========================================================== */
+
+#page2,
+#page3,
+#videoPage,
+#endPage
+{
+    display: none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+
+<!-- ==========================================================
+     PAGE 1 : INTRO
+     ========================================================== -->
+
+<div id="page1" class="page">
+
+    <div class="glow"></div>
+
+    <h1 style="color:#ffb3c7;">
+        CLICK HERE ❤️
+    </h1>
+
+    <p>
+        Special Gift From<br>
+        <b>Piyush Sharma</b>
+    </p>
+
+    <button class="btn" onclick="go2()">
+        OPEN
+    </button>
+
+</div>
+
+
+
+<!-- ==========================================================
+     PAGE 2 : MESSAGE
+     ========================================================== -->
+
+<div id="page2" class="page">
+
+    <div class="date">
+        22.01.2026
+    </div>
+
+    <h1>
+        Happy Anniversary Mummy Papa ❤️
+    </h1>
+
+    <p>
+        Aap dono ka pyaar hi meri duniya hai.<br>
+        Aapne hamesha mujhe sambhala aur guide kiya.<br>
+        Happy Anniversary Mummy Papa ❤️
+    </p>
+
+    <button class="btn" onclick="go3()">
+        NEXT
+    </button>
+
+</div>
+
+
+
+<!-- ==========================================================
+     PAGE 3 : PHOTOS
+     ========================================================== -->
+
+<div id="page3" class="page">
+
+    <h1>
+        Happy Anniversary ❤️
+    </h1>
+
+    <div class="grid">
+
+        <img src="photo1.jpg">
+        <img src="photo2.jpg">
+        <img src="photo3.jpg">
+        <img src="photo4.jpg">
+
+    </div>
+
+    <button class="btn" onclick="openPopup()">
+        CONTINUE
+    </button>
+
+</div>
+
+
+
+<!-- ==========================================================
+     VIDEO PAGE
+     ========================================================== -->
+
+<div id="videoPage" class="page">
+
+    <div class="player">
+
+        <video id="finalVideo"
+               src="final.mp4"
+               style="width:100%; border-radius:10px;">
+        </video>
+
+        <input type="range" id="seek" value="0">
+
+        <div class="controls">
+
+            <button onclick="back()">
+                ⏪10
+            </button>
+
+            <button onclick="toggle()">
+                ▶ / ⏸
+            </button>
+
+            <button onclick="forward()">
+                ⏩10
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ==========================================================
+     THE END PAGE
+     ========================================================== -->
+
+<div id="endPage" class="page">
+
+    <h1 id="endText"></h1>
+
+    <p>
+        Tap THE END to Exit
+    </p>
+
+</div>
+
+
+
+<!-- ==========================================================
+     BACKGROUND MUSIC
+     ========================================================== -->
+
+<audio id="bgMusic" src="song.mp3" loop></audio>
+
+
+
+<script>
+
+/* ==========================================================
+   PAGE NAVIGATION
+   ========================================================== */
+
+function go2()
+{
+    page1.style.display = "none";
+    page2.style.display = "flex";
+}
+
+function go3()
+{
+    page2.style.display = "none";
+    page3.style.display = "flex";
+
+    bgMusic.play();
+}
+
+
+
+/* ==========================================================
+   POPUP BEFORE VIDEO
+   ========================================================== */
+
+function openPopup()
+{
+    let p = document.createElement("div");
+
+    p.innerHTML = `
+    <div style="
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background:rgba(0,0,0,0.85);
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        z-index:9999;">
+        
+        <div style="
+            background:#111;
+            padding:30px;
+            border-radius:20px;
+            text-align:center;
+            box-shadow:0 0 30px #ff3b6b;
+            color:white;
+            z-index:10000;">
+
+            <h2 style="color:#ff4d6d;">
+                ❤️ Happy Anniversary ❤️
+            </h2>
+
+            <p style="color:white;">
+                Happy Anniversary once again Mummy Papa!<br>
+                Kaisa laga yeh project? 😼
+            </p>
+
+            <button class="btn"
+                onclick="bgMusic.pause();
+                         this.parentElement.parentElement.remove();
+                         playVideo();">
+                Close
+            </button>
+
+        </div>
+    </div>
+    `;
+
+    document.body.appendChild(p);
+}
+
+
+
+/* ==========================================================
+   VIDEO PLAY
+   ========================================================== */
+
+function playVideo()
+{
+    page3.style.display = "none";
+    videoPage.style.display = "flex";
+
+    finalVideo.play();
+
+    finalVideo.onended = function()
+    {
+        videoPage.style.display = "none";
+        endPage.style.display = "flex";
+
+        typeEnd();
+    };
+}
+
+
+
+/* ==========================================================
+   VIDEO CONTROLS
+   ========================================================== */
+
+let v = document.getElementById("finalVideo");
+let seek = document.getElementById("seek");
+
+v.ontimeupdate = function()
+{
+    seek.value = (v.currentTime / v.duration) * 100;
+};
+
+seek.oninput = function()
+{
+    v.currentTime = (seek.value / 100) * v.duration;
+};
+
+function toggle()
+{
+    v.paused ? v.play() : v.pause();
+}
+
+function back()
+{
+    v.currentTime = Math.max(0, v.currentTime - 10);
+}
+
+function forward()
+{
+    v.currentTime = Math.min(v.duration, v.currentTime + 10);
+}
+
+
+
+/* ==========================================================
+   DOUBLE TAP & SINGLE TAP CONTROLS
+   ========================================================== */
+
+let lastTap = 0;
+let singleTapTimer = null;
+
+v.addEventListener("touchend", function(e)
+{
+    let now = new Date().getTime();
+    let tapLength = now - lastTap;
+
+    let x = e.changedTouches[0].clientX;
+    let width = window.innerWidth;
+
+    if (tapLength < 300)
+    {
+        clearTimeout(singleTapTimer);
+
+        if (x > width / 2)
+        {
+            v.currentTime += 10;
+        }
+        else
+        {
+            v.currentTime -= 10;
+        }
+    }
+    else
+    {
+        singleTapTimer = setTimeout(function()
+        {
+            v.paused ? v.play() : v.pause();
+        }, 250);
+    }
+
+    lastTap = now;
+});
+
+
+
+/* ==========================================================
+   TYPEWRITER EFFECT
+   ========================================================== */
+
+let txt = "THE END ❤️";
+let i = 0;
+
+function typeEnd()
+{
+    if (i < txt.length)
+    {
+        endText.innerHTML += txt.charAt(i);
+        i++;
+
+        setTimeout(typeEnd, 150);
+    }
+}
+
+endPage.onclick = function()
+{
+    location.reload();
+};
+
+
+
+/* ==========================================================
+   HEART GENERATOR
+   ========================================================== */
+
+setInterval(function()
+{
+    let h = document.createElement("div");
+
+    h.className = "heart";
+    h.innerHTML = "❤️";
+
+    h.style.left = Math.random() * 100 + "vw";
+    h.style.fontSize = (20 + Math.random() * 30) + "px";
+
+    document.body.appendChild(h);
+
+    setTimeout(function()
+    {
+        h.remove();
+    }, 8000);
+
+}, 250);
+
+</script>
+
+</body>
+</html>
